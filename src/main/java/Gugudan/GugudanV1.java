@@ -10,17 +10,17 @@ public class GugudanV1 {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int i = 0 ;
-        do {
-            i = Integer.parseInt(br.readLine());
+        int[] ints = new int[9];
 
-        } while (  i < 2 || i > 9 );
+        int i = Integer.parseInt(br.readLine());
 
         System.out.println(i + "단");
-            for (int j = 1; j < 10; j++) {
-                System.out.println(i + " x " + j + " = " + i * j);
-            }
-            System.out.println();
+        for (int j = 1; j < 10; j++) {
+            ints[j-1] = i * j;
+        }
 
+        for (int j = 1; j < 10; j++) {
+            System.out.println(i + " x " + j + " = " + ints[j-1]);
+        }
     }
 }
